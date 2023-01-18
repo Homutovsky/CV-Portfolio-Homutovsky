@@ -6,15 +6,26 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.body { 
+@keyframes certificatesAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(4);
+  }
+}
+
+
+.body {
   background-image: url(img/banner.jpg);
-  height:100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .main {
-  height: 62%;
+  height: 70%;
 }
 
 .body::after {
@@ -32,41 +43,45 @@
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
-  position: relative;
   z-index: 1;
 }
 
 .container__banner {
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  
+  height: 100%;
 }
 
 .banner {
-  background: linear-gradient(90deg, rgba(2,0,36,0.2) 0%, rgba(35,170,166,0.2) 42%, rgba(0,212,255,0.2) 100%);
-  padding:30px;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.2) 0%, rgba(35, 170, 166, 0.2) 42%, rgba(0, 212, 255, 0.2) 100%);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  position: relative;
   z-index: 1;
-  height:38%;
+  height: 30%;
 }
 
 .banner__wrapper {
-  width:35%;
-  display:flex;
-  justify-content: center
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .person__img {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 300px;
+  width: 25vh;
+  height: 25vh;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.person__img:hover {
+  border-radius: 0%;
+  width: 100%;
+  height: 100%;
 }
 
 .person__img img {
@@ -75,54 +90,79 @@
   object-fit: cover;
 }
 
+.photo__switcher-right,
+.photo__switcher-left {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.photo__switcher-left {
+  background-image: url(img/arrow.svg);
+
+}
+
+.photo__switcher-right {
+  background-image: url(img/arrow.svg);
+  margin-left: 5px;
+}
+
 .person__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    width:65%
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  width: 65%
 }
 
 .person__name {
   font-size: 60px;
   font-weight: 700;
-  color:#fff;
+  color: #fff;
 }
 
 .person__specialization {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   font-weight: 400;
-  color:#fff;
+  color: #fff;
 }
 
 .container__main {
-    display:flex;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height:100%;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
 }
 
 .pesonal__wrapper {
-  max-width:300px;
+  max-width: 300px;
 }
 
-.personal__data, .personal__skills {
-  display:flex;
-  flex-direction:column;
-  color:#fff
+.personal__data,
+.personal__skills {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
 }
 
-.personal__data h3 {
-  margin:20px 0 10px 0;
+.personal__data h3,
+.certificates__title {
+  margin: 15px 0 5px 0;
   text-align: center;
   font-size: 25px;
+  position: relative
 }
 
 .personal__data {
   align-items: center;
-  width:35%;
-  background-color:rgba(194, 178, 178, 0.5);
+  width: 35%;
+  background-color: rgba(194, 178, 178, 0.5);
 }
 
 .data__list {
@@ -134,46 +174,48 @@
 }
 
 .data__item {
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 10px;
 }
 
 .item__img {
-    width: 25px;
-    height: 25px;
-    margin: 0 auto;
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
 }
 
 .item__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .data__hardSkills {
-  color:rgb(10, 206, 10);
-  margin-top:5px;
-  display:inline-block;
+  color: rgb(10, 206, 10);
+  margin-top: 5px;
+  display: inline-block;
 }
 
 .personal__skills {
   width: 65%;
-  background-color:rgba(108, 102, 102, 0.5);
+  background-color: rgba(108, 102, 102, 0.5);
+  position: relative;
 }
 
 .skills__wrapper {
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width:80%;
-  justify-content: space-around;
-  margin:0 auto;
+  width: 80%;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
-.skills__wrapper h3, .aboutMe__wrapper h3 {
-  margin:20px 0 10px 0;
+.skills__wrapper h3,
+.aboutMe__wrapper h3 {
+  margin: 20px 0 10px 0;
   text-align: center;
   font-size: 25px;
 }
@@ -185,10 +227,102 @@
 }
 
 .qualities__wrapper {
-  max-width:350px;
+  max-width: 280px;
 }
 
 .aboutMe__wrapper {
-  width:80%;
-  margin:0 auto;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.certificates__wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  column-gap: 50px;
+}
+
+.teachMeSkills__wrapper,
+.streamline__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22vh;
+  height: 16vh;
+  overflow: hidden;
+}
+
+.teachMeSkills__img,
+.streamline__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teachMeSkills__wrapper:hover,
+.streamline__wrapper:hover {
+  animation: certificatesAnimation 1s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 767px) {
+  .body::after {
+    background-color: rgba(0, 0, 0, 0.0);
+  }
+
+  .banner {
+    height: 100%;
+  }
+
+  .banner__wrapper {
+    width: 100%
+  }
+
+  .container__banner {
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .person__img {
+    width: 50vh;
+    height: 50vh;
+  }
+
+  .person__name {
+    font-size: 40px;
+  }
+
+  .person__wrapper {
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .person__specialization {
+    font-size: 30px;
+  }
+
+  .personal__data,
+  .personal__skills {
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgba(108, 102, 102, 0.5);
+  }
+
+  .container__main,
+  .skills__wrapper {
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .certificates__wrapper {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .person__img:hover {
+    width: 60%;
+    height: 90%;
+  }
 }
