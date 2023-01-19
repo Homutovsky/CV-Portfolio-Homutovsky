@@ -16,7 +16,6 @@ let count = 0
 const photoArray = ["img/person-photo.jpg", "img/person-photo2.jpg", "img/person-photo3.jpg", "img/person-photo4.jpg", "img/person-photo5.jpg", "img/person-photo6.jpg"]
 
 buttonRight.addEventListener('click', () => {
-  debugger
   if (count < 5) {
     count++
     if (count === 1) {
