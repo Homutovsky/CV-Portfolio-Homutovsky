@@ -104,7 +104,9 @@
 }
 
 .photo__switcher-left {
-  background-image: url(img/arrow-left.svg);
+  background-image: none;
+  border: none;
+  cursor: none;
   margin-right: 5px;
 }
 
