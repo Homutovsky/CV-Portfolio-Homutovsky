@@ -99,7 +99,7 @@
   background-color: transparent;
   cursor: pointer;
   border: none;
-  border:solid 1px #fff;
+  border: solid 1px #fff;
   border-radius: 50%;
 }
 
@@ -143,8 +143,8 @@
 }
 
 .pesonal__wrapper {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
   height: 100%;
   max-width: 300px;
@@ -158,8 +158,8 @@
 }
 
 .personal__skills {
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 
 }
@@ -193,6 +193,11 @@
   align-items: center;
   justify-content: center;
   column-gap: 10px;
+}
+
+.item__link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .item__img {
