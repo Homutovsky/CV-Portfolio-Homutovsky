@@ -4,16 +4,23 @@ const wrapper = document.querySelector('.person__img')
 const img = document.querySelector('.person__photo')
 
 img.addEventListener('mouseover', () => {
-  buttonLeft.style = "display:none"
-  buttonRight.style = "display:none"
+  buttonLeft.className = 'switcher__after-hover'
+  buttonRight.className = 'switcher__after-hover'
+
 })
 img.addEventListener('mouseout', () => {
-  buttonLeft.style = "display:block"
-  buttonRight.style = "display:block"
+  buttonLeft.className = 'photo__switcher-left'
+  buttonRight.className = 'photo__switcher-right'
 })
 
 let count = 0
-const photoArray = ["img/person-photo.jpg", "img/person-photo2.jpg", "img/person-photo3.jpg", "img/person-photo4.jpg", "img/person-photo5.jpg", "img/person-photo6.jpg"]
+const photoArray = [
+  "img/person-photo.jpg",
+  "img/person-photo2.jpg",
+  "img/person-photo3.jpg",
+  "img/person-photo4.jpg",
+  "img/person-photo5.jpg",
+  "img/person-photo6.jpg"]
 
 buttonRight.addEventListener('click', () => {
   if (count < 5) {
