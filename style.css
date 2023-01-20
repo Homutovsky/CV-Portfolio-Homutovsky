@@ -353,7 +353,6 @@
   .skills__wrapper {
     flex-direction: column;
     margin: 0 auto;
-    align-items: center;
   }
 
   .certificates__wrapper {
@@ -361,10 +360,7 @@
     row-gap: 20px;
   }
 
-  .person__img:hover {
-    border-radius: 50%;
-    width: 75%;
-    height: 75vw;
+  .skills__title {
+    transform: translate(30%);
   }
-
 }
