@@ -104,9 +104,7 @@
 }
 
 .photo__switcher-left {
-  background-image: none;
-  border: none;
-  cursor: none;
+  background-image: url(img/arrow-left.svg);
   margin-right: 5px;
 }
 
@@ -114,11 +112,20 @@
   background-image: url(img/arrow-right.svg);
   margin-left: 5px;
 }
-
-.switcher__after-hover {
+.photo__switcher-hover {
   background-image: none;
   border: none;
   cursor: none;
+}
+
+.photo__switcher-hidden {
+  background-image: none;
+  border: none;
+  cursor: none;
+  margin-right: 5px;
+  width:25px;
+  height:25px;
+  opacity: 0;
 }
 
 .person__wrapper {
@@ -324,7 +331,7 @@
 
   .person__img {
     width: 75%;
-    height: 75vw;
+    height: calc(75vw - 30px);
   }
 
   .person__name {

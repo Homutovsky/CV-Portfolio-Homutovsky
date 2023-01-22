@@ -1,17 +1,8 @@
-const buttonLeft = document.querySelector('.photo__switcher-left')
+const buttonLeft = document.querySelector('.photo__switcher-hidden')
 const buttonRight = document.querySelector('.photo__switcher-right')
 const wrapper = document.querySelector('.person__img')
 const img = document.querySelector('.person__photo')
 
-img.addEventListener('mouseover', () => {
-  buttonLeft.className = 'switcher__after-hover'
-  buttonRight.className = 'switcher__after-hover'
-
-})
-img.addEventListener('mouseout', () => {
-  buttonLeft.className = 'photo__switcher-left'
-  buttonRight.className = 'photo__switcher-right'
-})
 
 let count = 0
 const photoArray = [
@@ -25,11 +16,12 @@ const photoArray = [
 buttonRight.addEventListener('click', () => {
   if (count < 5) {
     count++
+
     if (count === 1) {
-      buttonLeft.style = 'backgroundImage: url(img/arrow-left.svg); border:solid 1px #fff; cursor:pointer'
+      buttonLeft.className = 'photo__switcher-left'
 
     } else if (count === 5) {
-      buttonRight.style = "background:none; border:none; cursor:none"
+      buttonRight.className = "photo__switcher-hidden"
     }
 
     img.src = photoArray[count]
@@ -38,14 +30,33 @@ buttonRight.addEventListener('click', () => {
 
 })
 
-
 buttonLeft.addEventListener('click', () => {
   if (count > 0) {
     if (count === 1) {
-      buttonLeft.style = "background:none; border:none; cursor:none"
+      buttonLeft.className = "photo__switcher-hidden"
     }
     count--
-    buttonRight.style = 'backgroundImage: url(img/arrow-right.svg); border:solid 1px #fff; cursor:pointer'
+
+    buttonRight.className = 'photo__switcher-right'
     img.src = photoArray[count]
+  }
+})
+
+
+img.addEventListener('mouseover', () => {
+  buttonLeft.className = 'photo__switcher-hover'
+  buttonRight.className = 'photo__switcher-hover'
+})
+img.addEventListener('mouseout', () => {
+  if(count === 0) {
+  buttonLeft.className = 'photo__switcher-hidden'
+  buttonRight.className = 'photo__switcher-right'
+  } else if (count === 5) {
+    buttonLeft.className = 'photo__switcher-left'
+    buttonRight.className = 'photo__switcher-hidden'
+  } else {
+    buttonLeft.className = 'photo__switcher-left'
+    buttonRight.className = 'photo__switcher-right'
+
   }
 })
