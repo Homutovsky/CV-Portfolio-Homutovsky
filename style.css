@@ -16,6 +16,10 @@
   }
 }
 
+a {
+  text-decoration: none;
+  color:lightskyblue;
+}
 
 .body {
   background-image: url(img/banner.jpg);
@@ -226,11 +230,6 @@
   object-fit: cover;
 }
 
-.data__hardSkills {
-  color: rgb(10, 206, 10);
-  margin-top: 5px;
-  display: inline-block;
-}
 
 .personal__skills {
   width: 65%;

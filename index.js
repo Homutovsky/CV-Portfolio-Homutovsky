@@ -7,6 +7,7 @@ const img = document.querySelector('.person__photo')
 let count = 0
 const photoArray = [
   "img/person-photo.jpg",
+  "img/person-photo1.jpg",
   "img/person-photo2.jpg",
   "img/person-photo3.jpg",
   "img/person-photo4.jpg",
