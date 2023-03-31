@@ -9,19 +9,16 @@ const photoArray = [
   "img/person-photo.jpg",
   "img/person-photo1.jpg",
   "img/person-photo2.jpg",
-  "img/person-photo3.jpg",
-  "img/person-photo4.jpg",
-  "img/person-photo5.jpg",
-  "img/person-photo6.jpg"]
+]
 
 buttonRight.addEventListener('click', () => {
-  if (count < 5) {
+  if (count < 2) {
     count++
 
     if (count === 1) {
       buttonLeft.className = 'photo__switcher-left'
 
-    } else if (count === 5) {
+    } else if (count === 2) {
       buttonRight.className = "photo__switcher-hidden"
     }
 
@@ -49,10 +46,10 @@ img.addEventListener('mouseover', () => {
   buttonRight.className = 'photo__switcher-hover'
 })
 img.addEventListener('mouseout', () => {
-  if(count === 0) {
-  buttonLeft.className = 'photo__switcher-hidden'
-  buttonRight.className = 'photo__switcher-right'
-  } else if (count === 5) {
+  if (count === 0) {
+    buttonLeft.className = 'photo__switcher-hidden'
+    buttonRight.className = 'photo__switcher-right'
+  } else if (count === 2) {
     buttonLeft.className = 'photo__switcher-left'
     buttonRight.className = 'photo__switcher-hidden'
   } else {
